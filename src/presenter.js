@@ -1,12 +1,15 @@
-import saludar from "./sumador";
+import bootsaludador from "./sumador";
 
 
-const first = document.querySelector("#saludo");
+
+const first = document.querySelector("#nombre");
+const second = document.querySelector("#genero");
 const form = document.querySelector("#saludo-form");
 const div = document.querySelector("#resultado-div");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
+  const saludo = new bootsaludador();
 
-  div.innerHTML = "<p>" + saludar(first.value) + "</p>";
+  div.innerHTML = "<b>"  + "<p>" + saludo.saludar(first.value, second.value) + "</p>"  + "</>";
 });
